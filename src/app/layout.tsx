@@ -34,12 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`2xl:container 2xl:mx-auto w-screen overflow-hidden pl-5 md:pl-10 lg:pt-10 pb-10 flex flex-col h-screen bg-no-repeat bg-cover ${getBackgroundClass()}`}
+        className={`2xl:container 2xl:mx-auto w-screen overflow-x-hidden pl-5 md:pl-10 lg:pt-10 pb-10 flex flex-col h-auto min-h-screen bg-no-repeat bg-cover ${getBackgroundClass()}`}
       >
         <nav className="relative flex justify-end">
           <Navbar />
         </nav>
-        <main className="mt-10 flex-1 lg:ml-36 mr-5 md:mr-10   lg:pr-0">{children}</main>
+        <main className="mt-10 flex-1 lg:ml-36 mr-5 md:mr-10 lg:mr-32 lg:pr-0 h-auto">{children}</main>
       </body>
     </html>
   );
