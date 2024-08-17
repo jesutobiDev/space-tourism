@@ -16,7 +16,7 @@ const Destination = () => {
   const destination = destinations[selectedDestination];
 
   return (
-    <div className="h-auto flex flex-col">
+    <div className="h-auto flex flex-col flex-1">
       <h1 className="text-white font-barlow-condensed font-light tracking-widest text-xl md:text-3xl flex items-center justify-center md:justify-start">
         <span className="text-white/20 font-semibold mr-4">01</span>
         PICK YOUR DESTINATION

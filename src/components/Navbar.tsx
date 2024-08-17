@@ -5,16 +5,21 @@ import hamburger from "../../public/assets/shared/icon-hamburger.svg";
 import close from "../../public/assets/shared/icon-close.svg";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import path from "path";
 
 const Navbar = () => {
   const navLinks = [
-    { number: "00", name: "Home", route: "/" },
-    { number: "01", name: "Destination", route: "/destination" },
-    { number: "02", name: "Crew", route: "/crew" },
-    { number: "03", name: "Technology", route: "/technology" },
+    { number: "00", name: "home", route: "/" },
+    { number: "01", name: "destination", route: "/destination" },
+    { number: "02", name: "crew", route: "/crew" },
+    { number: "03", name: "technology", route: "/technology" },
   ];
 
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <div className="flex h-28 lg:h-20 w-full justify-between relative font-barlow-condensed text-2xl lg:text-xl tracking-wider lg:tracking-wide">
@@ -54,7 +59,8 @@ const Navbar = () => {
           className={`text-white gap-10 w-full md:flex lg:w-2/3 md:items-center md:justify-center md:bg-white/10 md:h-full flex-col md:flex-row md:ml-auto ${isNavOpen ? "flex" : "hidden"}`}
         >
           {navLinks.map((link, index) => (
-            <li key={index} className="md:h-full flex items-center uppercase"           onClick={() => setIsNavOpen(!isNavOpen)}>
+            <li key={index} className={`md:h-full flex items-center uppercase ${pathname === link.name ? "border-b-2 border-white" : ""}`}           
+            onClick={() => setIsNavOpen(!isNavOpen)}>
               <Link
                 href={link.route}
                 className="flex gap-2 h-full items-center"

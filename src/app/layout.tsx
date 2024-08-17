@@ -39,7 +39,7 @@ export default function RootLayout({
         <nav className="relative flex justify-end">
           <Navbar />
         </nav>
-        <main className="mt-10 flex-1 lg:ml-36 mr-5 md:mr-10 lg:mr-32 lg:pr-0 h-auto">{children}</main>
+        <main className="mt-10 flex-1 lg:ml-36 mr-5 md:mr-10 lg:mr-32 lg:pr-0 h-auto flex flex-col">{children}</main>
       </body>
     </html>
   );
