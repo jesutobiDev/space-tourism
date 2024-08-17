@@ -41,11 +41,11 @@ const Navbar = () => {
         />
       </div>
       <div
-        className={`w-[75vw] md:flex-1 relative md:h-full transition-[height] duration-300 ease-in-out flex-col md:flex-row md:justify-end backdrop-blur-md md:backdrop-blur-0 bg-white/5 md:bg-transparent pr-5 md:pr-0 pl-10 md:pl-0 ${
+        className={`w-[75vw] md:flex-1 relative md:h-full transition-[height] duration-300 ease-in-out flex-col md:flex-row md:justify-end backdrop-blur-md md:backdrop-blur-0 bg-white/5 md:bg-transparent pl-10 md:pl-0 ${
           isNavOpen ? "h-screen" : "h-0"
         }`}
       >
-        <div className="h-28 flex items-center ml-auto md:hidden">
+        <div className="h-28 flex items-center ml-auto md:hidden pr-5">
           <Image
             src={close}
             alt="close menu"
@@ -56,11 +56,18 @@ const Navbar = () => {
           />
         </div>
         <ul
-          className={`text-white gap-10 w-full md:flex lg:w-2/3 md:items-center md:justify-center md:bg-white/10 md:h-full flex-col md:flex-row md:ml-auto ${isNavOpen ? "flex" : "hidden"}`}
+          className={`text-white gap-10 w-full md:flex lg:w-2/3 md:items-center md:justify-center md:bg-white/10 md:h-full flex-col md:flex-row md:ml-auto ${
+            isNavOpen ? "flex" : "hidden"
+          }`}
         >
           {navLinks.map((link, index) => (
-            <li key={index} className={`md:h-full flex items-center uppercase ${pathname === link.name ? "border-b-2 border-white" : ""}`}           
-            onClick={() => setIsNavOpen(!isNavOpen)}>
+            <li
+              key={index}
+              className={`md:h-full flex items-center uppercase ${
+                pathname === link.route ? "border-r-4 md:border-r-0 md:border-b-2 border-white" : ""
+              }`}
+              onClick={() => setIsNavOpen(!isNavOpen)}
+            >
               <Link
                 href={link.route}
                 className="flex gap-2 h-full items-center"
