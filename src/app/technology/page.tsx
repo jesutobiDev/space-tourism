@@ -45,7 +45,7 @@ const Technology = () => {
             </picture>
           </div>
         </div>
-        <div className="flex-1 flex flex-col lg:flex-row gap-10 lg:items-center h-fit self-center mt-28">
+        <div className="flex-1 flex flex-col lg:flex-row gap-10 lg:items-center self-center mt-28 md:mt-80 lg:mt-0">
           <div className="flex lg:flex-col gap-10 md:gap-20 lg:gap-10 justify-center lg:justify-between">
             {technologies.map((tech, index) => (
               <button
