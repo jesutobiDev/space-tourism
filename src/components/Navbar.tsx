@@ -22,7 +22,7 @@ const Navbar = () => {
   console.log(pathname);
 
   return (
-    <div className="flex h-28 lg:h-20 w-full justify-between relative font-barlow-condensed text-2xl lg:text-xl tracking-wider lg:tracking-wide">
+    <div className="flex h-28 lg:h-20 w-full justify-between relative font-barlow-condensed text-2xl lg:text-xl tracking-wider lg:tracking-wide ml-5 md:ml-10 ">
       <div className="w-fit md:w-32 lg:w-36 h-full flex items-center">
         <Image src={logo} alt="logo" />
       </div>
